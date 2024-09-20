@@ -18,10 +18,10 @@
        </div>
     </div>
     <div class="sidebar_blog_2">
-       <h4>Students</h4>
+       <h4>Media And Management</h4>
        <ul class="list-unstyled components">
-          <li><a href=""><i class="fa fa-table purple_color2"></i> <span> Update Record</span></a></li>
-
+          <li><a href="{{route('medias.index')}}"><i class="fa fa-table purple_color2"></i> <span>Media Table</span></a></li>
+          <li><a href="{{route('medias.create')}}"><i class="fa fa-clock-o orange_color"></i> <span>Create Media and Audios</span></a></li>
        {{-- <li>
         <a href="{{route('students.create')}}">
         <i class="fa fa-paper-plane red_color"></i> <span>Create Students</span></a>

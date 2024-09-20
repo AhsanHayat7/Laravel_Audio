@@ -33,9 +33,9 @@
         -> button section
         -> pagination
         -> model bt
-    17. Gallery Section     
+    17. Gallery Section
     18. Icons
-    19. Invoice  
+    19. Invoice
     20. Price table
     21. Mail
     22. Price table page
@@ -44,7 +44,7 @@
     25. Login Section
     26. Error
     27. Map
-   
+
 -------------------------------------------------------------------*/
 
 
@@ -79,11 +79,11 @@
 
 html,
 body {
-    color: #898989;
-    font-size: 14px;
+    color: white;
+    font-size: 22px;
     font-family: 'Poppins', sans-serif;
     line-height: normal;
-    font-weight: 300;
+    font-weight: 450;
     overflow-x: hidden !important;
 }
 
@@ -114,6 +114,16 @@ body.demos .container-fluid {
     max-width: 1080px
 }
 
+h6.mb-4 {
+    font-size: larger;
+    color: white;
+}
+span {
+    color: white;
+}
+a {
+    color:black !important;
+}
 a {
     color: #1f1f1f;
     text-decoration: none !important;
@@ -367,8 +377,8 @@ h5 {
 }
 
 p {
-    color: #58718a;
-    font-size: 14px;
+    color: white;
+    font-size: 22px;
     line-height: 21px;
 }
 
@@ -618,7 +628,7 @@ a:focus {
 
 
 /*==============
-    - topbar 
+    - topbar
 ==============*/
 
 .topbar {
@@ -2134,7 +2144,7 @@ i.icon {
 
 
 /*------------------------------------------------------------------
-    16. General Elements 
+    16. General Elements
 -------------------------------------------------------------------*/
 
 .link.today {
@@ -2266,7 +2276,7 @@ i.icon {
 
 
 /*------------------------------------------------------------------
-    17. Gallery Section   
+    17. Gallery Section
 -------------------------------------------------------------------*/
 
 .gallery_section_inner .column {
@@ -2291,7 +2301,7 @@ i.icon {
 
 
 /*------------------------------------------------------------------
-    18. Icons  
+    18. Icons
 -------------------------------------------------------------------*/
 
 .fontawesome-icons-list .fw_icon a {
@@ -2332,7 +2342,7 @@ i.icon {
 
 
 /*------------------------------------------------------------------
-    19. Invoice  
+    19. Invoice
 -------------------------------------------------------------------*/
 
 h2.invoice_head {
@@ -2413,7 +2423,7 @@ h2.invoice_head small {
 
 
 /*------------------------------------------------------------------
-    20. Price table  
+    20. Price table
 -------------------------------------------------------------------*/
 
 .price_table table.table {
