@@ -44,7 +44,16 @@ class MediaController extends Controller
             'title' => 'required',
             'audio' => 'mimes:mp3|max:10240|nullable',
             'video' => 'mimes:mp4|max:51200|nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif'
         ]);
+
+        //handle image
+
+        $image = $request->image;
+        $image_new_name = time(). '_' . $image->getClientOriginalName();
+
+        $image->move('uploads/images',$image_new_name);
+        $imagepath = 'uploads/images/' . $image_new_name;
 
         // Handle video upload
         $videoPath = null;
@@ -64,12 +73,16 @@ class MediaController extends Controller
             $audioPath = 'uploads/audios/' . $audioNewName;
         }
 
+
+
+
         // Save the media details in the database
         $media = Media::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'audio_path' => $audioPath,
             'video_path' => $videoPath,
+            'image'=> $imagepath,
         ]);
 
         flash('Your Media is Created Successfully.');
@@ -115,6 +128,7 @@ class MediaController extends Controller
              'title' => 'required',
              'audio' => 'mimes:mp3|max:10240|nullable',
              'video' => 'mimes:mp4|max:51200|nullable',
+             'image'=>  'nullable|image|mimes:jpeg,png,jpg,gif'
          ]);
 
          // Find the media entry by ID
@@ -123,6 +137,21 @@ class MediaController extends Controller
          if (!$media) {
              return redirect()->route('medias.index')->withErrors('Media not found.');
          }
+
+         //handle the images
+
+         if ($request->hasFile('image')) {
+            if ($media->image && file_exists(public_path($media->image))) {
+                unlink(public_path($media->image));
+            }
+
+            $newImageFile = $request->file('image');
+            $newImageName = time() . '_' . $newImageFile->getClientOriginalName();
+            $newImageFile->move(public_path('uploads/videos'), $newImageName);
+
+            $media->image = 'uploads/videos/' . $newImageName;
+        }
+
 
          // Handle video update if a new file is uploaded
          if ($request->hasFile('video')) {
@@ -164,6 +193,7 @@ class MediaController extends Controller
              }
              $media->audio_path = null;
          }
+
 
          // Update the title even if no new files are uploaded
          $media->title = $request->title;

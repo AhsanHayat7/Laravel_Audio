@@ -9,7 +9,7 @@ class Media extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'audio_path', 'video_path', 'user_id'];
+    protected $fillable = ['title','image','audio_path', 'video_path', 'user_id'];
 
     public function users(){
         return $this->belongsTo(User::class);

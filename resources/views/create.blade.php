@@ -14,6 +14,11 @@
                         </div>
 
                         <div class="form-floating mb-3">
+                            <input type="file" class="form-control" placeholder="image" name="image" >
+                            <label for="iamges">Image</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
                             <input type="file" class="form-control"  name="audio" >
                             <label for="audio">Audio File</label>
                         </div>

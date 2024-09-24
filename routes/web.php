@@ -23,6 +23,7 @@ use App\Http\Controllers\WebController;
 
 Route::group(['middleware'=> 'auth'], function (){
 Route::resource('medias', MediaController::class);
+Route::get('logout', [AuthController::class,  'logout'])->name('logout');
 // Route::get('media/download/{id}/{type}', [MediaController::class, 'download'])->name('medias.download');
 });
 Route::get('/',[WebController::class,  'index'])->name('home');
@@ -35,6 +36,5 @@ Route::post('/login',[AuthController::class, 'login'])->name('login');
 
 Route::get('/register', [AuthController::class, 'reg'])->name('regist');
 Route::post('/register',[AuthController::class, 'register'])->name('register');
-
 });
-Route::get('logout', [AuthController::class,  'logout'])->name('logout');
+

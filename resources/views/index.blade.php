@@ -6,6 +6,7 @@
           <thead>
              <tr>
                 <th>Title</th>
+                <th>Images</th>
                 <th>Audio File</th>
                 <th>Video File</th>
                 <th>Edit</th>
@@ -16,6 +17,12 @@
             @foreach ($medias as $media)
              <tr>
                 <td>{{ $media->title }}</td>
+                <td>
+                    <a data-fancybox= href="{{ asset($media->image) }}">
+                        <img src="{{ asset($media->image) }}" alt="{{ $media->title }}" style="max-width: 100px;">
+                    </a>
+                </td>
+
                 <td>
                     <audio controls>
                         <source src="{{ asset($media->audio_path) }}" type="audio/mp3">

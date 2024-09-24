@@ -110,6 +110,10 @@ body.demos .service-widget {
     background-color: #fff
 }
 
+.table_section.padding_infor_info {
+    max-height: 766px !important;
+    overflow-y: auto !important;
+}
 body.demos .container-fluid {
     max-width: 1080px
 }

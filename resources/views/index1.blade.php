@@ -528,7 +528,7 @@
                                 </div>
                             </div>
                             <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
+                                <source src="{{asset('website/audio/dummy-audio.mp3')}}">
                             </audio>
                         </div>
 

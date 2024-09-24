@@ -15,6 +15,10 @@
                         <label for="title">Title</label>
                     </div>
 
+                    <div class="form-floating mb-3">
+                        <input type="file" class="form-control" placeholder="Images" name="image">
+                        <label for="Images">Image</label>
+                    </div>
                     <!-- Audio File Field -->
                     <div class="form-floating mb-3">
                         <input type="file" class="form-control" placeholder="Audio file" name="audio">
